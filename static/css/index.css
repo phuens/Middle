@@ -1,0 +1,19 @@
+html body{
+    background: antiquewhite;
+
+}
+
+#logo{
+    font-family: 'Monoton' , sans-serif;
+    font-size:100px;
+    color: blue;
+    padding:5px;
+}
+#slogan{
+    font-size: 40px;
+    font-family: 'Julius Sans One', sans-serif;
+}
+.canvas{
+    background: white;
+    height: 100px;
+}
