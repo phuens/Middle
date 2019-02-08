@@ -1,19 +1,48 @@
+*{
+    transition: all 300ms ease;
+}
 html body{
     background: antiquewhite;
 
 }
-
+/*Image of the bird in a cage*/
+#img-logo{
+    width: 10%;
+    position: relative;
+    top: -41px;
+}
+/*The name of the game: Birdie*/
 #logo{
     font-family: 'Monoton' , sans-serif;
     font-size:100px;
     color: blue;
     padding:5px;
+    text-align: left;
+
 }
+/*Only one Spot matters!*/
 #slogan{
-    font-size: 40px;
+    font-size: 35px;
     font-family: 'Julius Sans One', sans-serif;
+    color: grey;
+    padding-top:70px;
 }
+/*=========== END OF THE BANNER SECTION ===============*/
 .canvas{
     background: white;
     height: 100px;
+}
+
+@media screen and (max-width: 1200px){
+    .banner{
+        text-align: center;
+    }
+    #slogan{
+        display:none;
+    }
+}
+@media screen and (max-width: 1000px){
+    #img-logo{
+        display:none;
+    }
 }
