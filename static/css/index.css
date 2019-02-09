@@ -1,9 +1,9 @@
 *{
     transition: all 300ms ease;
 }
-html body{
+html, body{
     background: antiquewhite;
-
+    min-width: 900px;
 }
 /*|||||||||||||||||||||||||||||||||||||||||||||||||||
 ================ BANNER SECTION  ====================
@@ -71,12 +71,20 @@ html body{
     display: block;
     transition: all 3s ease;
 }
+#cage{
+    width:20%;
+    height:15%;
+    display: block;
+    margin: 30px auto auto auto;
+    border: 1px solid black;
+}
 #bird{
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
     position: relative;
     overflow: hidden;
     width:10%;
+    border: 1px solid black;
 }
 @keyframes bird_move {
     from {left: 0;}
@@ -94,9 +102,25 @@ html body{
     #slogan{
         display:none;
     }
+    #cage{
+        margin: 50px auto auto auto;
+    }
 }
 @media screen and (max-width: 1000px){
     #img-logo{
         display:none;
+    }
+    #cage{
+        margin: 70px auto auto auto;
+    }
+}
+@media screen and (max-width: 900px){
+    #cage{
+        margin: 90px auto auto auto;
+    }
+}
+@media screen and (max-width: 750px){
+    #cage{
+        margin: 120px auto auto auto;
     }
 }

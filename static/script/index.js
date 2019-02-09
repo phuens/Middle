@@ -6,6 +6,10 @@ $(document).ready(function(){
         console.log("button hidden");
     })
 });
+function bleep(){
+    let bleep = new Audio();
+    bleep.src="../images/click.mp3";
+}
 function start(){
     console.log("started: All ready to go");
     $("#in-game_title").hide("fast");
