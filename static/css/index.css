@@ -40,11 +40,16 @@ html body{
     height:570px;
     border:1px solid black;
     background-size: cover;
-    background: url("../images/front_page.gif") no-repeat;
+    background: url("../images/canvas_background.jpg") no-repeat;
     background-size: cover;
-    background-position: center;
+    background-position: 0 0;
 
 }
+@keyframes bkg_move {
+    from {background-position: 0 0 ;}
+    to {background-position: 100% 0 ;}
+}
+
 /*the work birdie above the bird on the homepage*/
 #in-game_title{
     font-family: 'Julius Sans One', sans-serif;
@@ -61,8 +66,21 @@ html body{
     top:100px;
     padding:2px 40px;
     color:orange;
-
-
+}
+.start{
+    display: block;
+    transition: all 3s ease;
+}
+#bird{
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    position: relative;
+    overflow: hidden;
+    width:10%;
+}
+@keyframes bird_move {
+    from {left: 0;}
+    to {left: 90%;}
 }
 
 
