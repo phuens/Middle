@@ -13,14 +13,13 @@ html body{
 #img-logo{
     width: 10%;
     position: relative;
-    top: -41px;
+    top: -30px;
 }
 /*The name of the game: Birdie*/
 #logo{
     font-family: 'Monoton' , sans-serif;
-    font-size:100px;
+    font-size:70px;
     color: blue;
-    padding:5px;
     text-align: left;
 
 }
@@ -38,14 +37,33 @@ html body{
 
 .canvas{
     width:100%;
-    height:500px;
+    height:570px;
     border:1px solid black;
     background-size: cover;
-    background: url("../images/birdman.gif") no-repeat;
-    background-position: right;
+    background: url("../images/front_page.gif") no-repeat;
+    background-size: cover;
+    background-position: center;
 
 }
+/*the work birdie above the bird on the homepage*/
+#in-game_title{
+    font-family: 'Julius Sans One', sans-serif;
+    font-size: 110px;
+    color:white;
+    text-align: center;
+    position: relative;
+    top:100px;
+}
+/*This is for the play button*/
+.canvas .front-page .text-center .btn-primary{
+    font-size: 3rem;
+    position: relative;
+    top:100px;
+    padding:2px 40px;
+    color:orange;
 
+
+}
 
 
 /*|||||||||||||||||||||||||||||||||||||||||||||||||||
