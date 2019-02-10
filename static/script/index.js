@@ -1,7 +1,7 @@
 $(document).ready(function(){
     $(".btn").click(function(){
         $(".btn").hide("fast");                         // Hides all the buttons when it is clicked.
-        $("#bird").css("display", "block")
+        $("#bird").css("display", "block");
         $("#cage").css("display","block");              // Display the cage once the user is ready.
         $("#in-game_title").hide("fast");               // Hide the title "Birdie" when user is ready.
         run($(this).attr('id'));                        // Execute the run function. Passing the ID of the clicked button.
@@ -16,7 +16,7 @@ function userInput(){
     $(document).keydown(function(event) {
         if ( event.which === 13 ) {                     // Check if the user pressed enter.
             if (check() === true){                      // Return true if the bird is caught.
-                console.log("you win")
+                celebrate();
             }
             else{                                       // If the bird is not caught.
                 lose();                                 // Execute the lose function.
@@ -89,7 +89,34 @@ function run(id_value){
     userInput() // Check if the user pressed enter. Execute the user Input func.
 }
 
+
 //----------------------------------------------------------------------
+/**
+ * Celebrate: user wins.
+ */
+function celebrate(){
+    let picts = new Array(10);
+    let width = $( window ).width()-200;
+    let height = $( window ).height()-300;
+
+
+    for(let i=0; i < 19; i++){
+        picts[i] = new Image();
+        picts[i].src = "../static/images/firework"+i+".gif";
+        console.log(picts[i].src);
+        let new_img = $( "<img id='"+i+"' src="+picts[i].src+">" );
+        $(".fireworks" ).append(new_img);
+        let left_pos = Math.floor((Math.random()*width)+1);
+        let top_pos = Math.floor((Math.random()*height)+1);
+        $("#"+i).css({
+            "position": "absolute",
+            "top": top_pos,
+            "left": left_pos
+        });
+    }
+    $(".win-msg").css("display","block")
+}
+
 /**
  * Displays a message saying you lost.
  */

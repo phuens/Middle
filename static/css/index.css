@@ -78,7 +78,7 @@ html body{
     height:15%;
     display: none;
     margin: 30px auto auto auto;
-    border: 0px solid black;
+    border: 0 solid black;
     animation: show 500ms ease-in;
     z-index: 3;
     position: relative;
@@ -95,16 +95,14 @@ html body{
     position: relative;
     overflow: hidden;
     width: 10%;
-    border: 0px solid black;
+    border: 0 solid black;
     top:0;
     z-index:1;
 }
-
 @keyframes bird_move {
     from {left: 0;}
     to {left: 93%;}
 }
-
 
 /*|||||||||||||||||||||||||||||||||||||||||||||||||||
 ================ MEDIA QUERIES ======================
