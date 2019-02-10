@@ -1,29 +1,22 @@
 $(document).ready(function(){
-    console.log("Testing if the script file is running");
+
+    //console.log("Testing if the script file is running");
     $(".start").click(function(){
         $(".start").hide("fast");
         start();
-        console.log("button hidden");
+        //console.log("button hidden");
         $("#cage").css("display","block");
     })
 });
-function start(){
-    console.log("started: All ready to go");
-    $("#in-game_title").hide("fast");
-    $(".canvas").css({
-        "animation": "bkg_move ease-in 5s"
-    });
-    $("#bird").css({
-        "animation": "bird_move ease-in 10s"
-    });
-    userInput();
-
-}
-
 function userInput(){
     $(document).keydown(function(event) {
         if ( event.which === 13 ) {
-            check();
+            if (check() === true){
+                console.log("you win")
+            }
+            else{
+                lose();
+            }
         }
     });
 }
@@ -41,10 +34,19 @@ function check(){
     let bird_position = bird.offset();
     console.log("Bird left: " + bird_position.left + " top: " + bird_position.top)
 
-    if (bird_position.left > cage_position.left-20 && bird_position.left < cage_position.left+150 ){
-        console.log("right")
-    }
-    else{
-        console.log("Failed")
-    }
+    return bird_position.left > cage_position.left - 20 && bird_position.left < cage_position.left + 150;
+}
+function start(){
+    console.log("started: All ready to go");
+    $("#in-game_title").hide("fast");
+    $(".canvas").css({
+        "animation": "bkg_move linear 5s infinite"
+    });
+    $("#bird").css({
+        "animation": "bird_move linear 5s infinite"
+    });
+    userInput()
+}
+function lose(){
+    console.log("you lost!")
 }
