@@ -76,7 +76,7 @@ html body{
     height:15%;
     display: none;
     margin: 30px auto auto auto;
-    border: 0 solid black;
+    border: 1px solid black;
     animation: show 500ms ease-in;
 }
 @keyframes show {
@@ -90,7 +90,8 @@ html body{
     position: relative;
     overflow: hidden;
     width:10%;
-    border: 0 solid black;
+    border: 1px solid black;
+    top:200px;
 }
 @keyframes bird_move {
     from {left: 0;}
