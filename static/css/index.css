@@ -78,26 +78,31 @@ html body{
     height:15%;
     display: none;
     margin: 30px auto auto auto;
-    border: 1px solid black;
+    border: 0px solid black;
     animation: show 500ms ease-in;
+    z-index: 3;
+    position: relative;
+    top: 155px;
 }
 @keyframes show {
     from{opacity: 0}
     to{opacity:1}
 }
 
-#bird{
+#bird {
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
     position: relative;
     overflow: hidden;
-    width:10%;
-    border: 1px solid black;
-    top:200px;
+    width: 10%;
+    border: 0px solid black;
+    top:0;
+    z-index:1;
 }
+
 @keyframes bird_move {
     from {left: 0;}
-    to {left: 100%;}
+    to {left: 93%;}
 }
 
 
@@ -127,9 +132,15 @@ html body{
     #cage{
         margin: 90px auto auto auto;
     }
+    #bird{
+        top:70px;
+    }
 }
 @media screen and (max-width: 750px){
     #cage{
         margin: 120px auto auto auto;
+    }
+    #bird{
+        top:85px;
     }
 }

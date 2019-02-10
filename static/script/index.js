@@ -1,6 +1,7 @@
 $(document).ready(function(){
     $(".btn").click(function(){
         $(".btn").hide("fast");                         // Hides all the buttons when it is clicked.
+        $("#bird").css("display", "block")
         $("#cage").css("display","block");              // Display the cage once the user is ready.
         $("#in-game_title").hide("fast");               // Hide the title "Birdie" when user is ready.
         run($(this).attr('id'));                        // Execute the run function. Passing the ID of the clicked button.
@@ -31,14 +32,14 @@ function userInput(){
  * */
 function check(){
     let bird = $("#bird");
-    bird.css("animation-play-state","paused");          // Pause the bird from moving.
-    $(".canvas").css("animation-play-state","paused");  // Pause the background from moving.
+    bird.css("animation-play-state","paused");           // Pause the bird from moving.
+    $(".canvas").css("animation-play-state","paused");   // Pause the background from moving.
 
     //position of the cage
-    let cage_position = $("#cage").offset();            // Stores the top and left position of the cage.
+    let cage_position = $("#cage").offset();             // Stores the top and left position of the cage.
 
     //position of the bird when stopped.
-    let bird_position = bird.offset();                  // Stores the top and left position of the bird where it is.
+    let bird_position = bird.offset();                   // Stores the top and left position of the bird where it is.
 
     // return true if the bird is caught and vice versa.
     return bird_position.left > cage_position.left - 20 && bird_position.left < cage_position.left + 150;
@@ -50,15 +51,15 @@ function check(){
  * @param id_value - ID of the button the user pressed.
  */
 function run(id_value){
-    if (id_value ==="easy"){                            // Easy Level.
+    if (id_value ==="easy"){                             // Easy Level.
         $(".canvas").css({
-            "animation": "bkg_move linear 4s infinite"  // Animate the background.
+            "animation": "bkg_move linear 4s infinite"   // Animate the background.
         });
-        $("#bird").css({                                //Animate the bird.
+        $("#bird").css({                                 //Animate the bird.
             "animation": "bird_move linear 4s infinite"
         });
     }
-    else if (id_value ==="medium"){                     // Medium Level.
+    else if (id_value ==="medium"){                      // Medium Level.
         console.log("started: All ready to go");
         $(".canvas").css({
             "animation": "bkg_move linear 2s infinite"
@@ -67,13 +68,13 @@ function run(id_value){
             "animation": "bird_move linear 2s infinite"
         });
     }
-    else if (id_value ==="hard"){                       // Hard Level.
+    else if (id_value ==="hard"){                        // Hard Level.
         console.log("started: All ready to go");
         $(".canvas").css({
-            "animation": "bkg_move linear 1s infinite"
+            "animation": "bkg_move linear 800ms infinite"
         });
         $("#bird").css({
-            "animation": "bird_move linear 1s infinite"
+            "animation": "bird_move linear 800ms infinite"
         });
     }
     else {                                               // Impossible Level.
@@ -85,7 +86,7 @@ function run(id_value){
             "animation": "bird_move linear 300ms infinite"
         });
     }
-    userInput()                                           // Check if the user pressed enter. Execute the user Input func.
+    userInput() // Check if the user pressed enter. Execute the user Input func.
 }
 
 //----------------------------------------------------------------------
