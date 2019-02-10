@@ -1,24 +1,34 @@
 $(document).ready(function(){
     $(".btn").click(function(){
-        $(".btn").hide("fast");             // Hides all the buttons when it is clicked.
-        $("#cage").css("display","block");  // Display the cage once the user is ready.
-        $("#in-game_title").hide("fast");   // Hide the title "Birdie" when user is ready.
-        run($(this).attr('id'));            // Execute the run function. Passing the ID of the clicked button.
+        $(".btn").hide("fast");                         // Hides all the buttons when it is clicked.
+        $("#cage").css("display","block");              // Display the cage once the user is ready.
+        $("#in-game_title").hide("fast");               // Hide the title "Birdie" when user is ready.
+        run($(this).attr('id'));                        // Execute the run function. Passing the ID of the clicked button.
     });
 });
+
+//----------------------------------------------------------------------
+/**
+ * Checks if the user pressed the enter button.
+ */
 function userInput(){
     $(document).keydown(function(event) {
-        if ( event.which === 13 ) {         // Check if the user pressed enter.
-            if (check() === true){          // Return true if the bird is caught.
+        if ( event.which === 13 ) {                     // Check if the user pressed enter.
+            if (check() === true){                      // Return true if the bird is caught.
                 console.log("you win")
             }
-            else{                           // If the bird is not caught.
-                lose();                     // Execute the lose function.
+            else{                                       // If the bird is not caught.
+                lose();                                 // Execute the lose function.
             }
         }
     });
 }
 
+//----------------------------------------------------------------------
+/**
+ * Checks if the bird's position in within the cage's position.
+ * @return {boolean} bool - true if bird is caught.
+ * */
 function check(){
     let bird = $("#bird");
     bird.css("animation-play-state","paused");          // Pause the bird from moving.
@@ -26,17 +36,21 @@ function check(){
 
     //position of the cage
     let cage_position = $("#cage").offset();            // Stores the top and left position of the cage.
-    //console.log("Cage left: " + cage_position.left + " top: " + cage_position.top);
 
     //position of the bird when stopped.
     let bird_position = bird.offset();                  // Stores the top and left position of the bird where it is.
-    //console.log("Bird left: " + bird_position.left + " top: " + bird_position.top)
 
-    return bird_position.left > cage_position.left - 20 && bird_position.left < cage_position.left + 150; //return true or false.
+    // return true if the bird is caught and vice versa.
+    return bird_position.left > cage_position.left - 20 && bird_position.left < cage_position.left + 150;
 }
 
+//----------------------------------------------------------------------
+/**
+ * starts the game when the user presses one of the level.
+ * @param id_value - ID of the button the user pressed.
+ */
 function run(id_value){
-    if (id_value ==="easy"){                            // User pressed easy.
+    if (id_value ==="easy"){                            // Easy Level.
         $(".canvas").css({
             "animation": "bkg_move linear 4s infinite"  // Animate the background.
         });
@@ -44,7 +58,7 @@ function run(id_value){
             "animation": "bird_move linear 4s infinite"
         });
     }
-    else if (id_value ==="medium"){
+    else if (id_value ==="medium"){                     // Medium Level.
         console.log("started: All ready to go");
         $(".canvas").css({
             "animation": "bkg_move linear 2s infinite"
@@ -53,7 +67,7 @@ function run(id_value){
             "animation": "bird_move linear 2s infinite"
         });
     }
-    else if (id_value ==="hard"){
+    else if (id_value ==="hard"){                       // Hard Level.
         console.log("started: All ready to go");
         $(".canvas").css({
             "animation": "bkg_move linear 1s infinite"
@@ -62,7 +76,7 @@ function run(id_value){
             "animation": "bird_move linear 1s infinite"
         });
     }
-    else {
+    else {                                               // Impossible Level.
         console.log("started: All ready to go");
         $(".canvas").css({
             "animation": "bkg_move linear 300ms infinite"
@@ -71,8 +85,13 @@ function run(id_value){
             "animation": "bird_move linear 300ms infinite"
         });
     }
-    userInput()
+    userInput()                                           // Check if the user pressed enter. Execute the user Input func.
 }
+
+//----------------------------------------------------------------------
+/**
+ * Displays a message saying you lost.
+ */
 function lose(){
     console.log("you lost!")
 }
