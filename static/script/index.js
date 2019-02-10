@@ -18,29 +18,29 @@ function userInput(){
         }
     });
 }
+
 function check(){
     let bird = $("#bird");
-    bird.css("animation-play-state","paused");
-    $(".canvas").css("animation-play-state","paused");
+    bird.css("animation-play-state","paused");          // Pause the bird from moving.
+    $(".canvas").css("animation-play-state","paused");  // Pause the background from moving.
 
     //position of the cage
-    let cage_position = $("#cage").offset();
-    console.log("Cage left: " + cage_position.left + " top: " + cage_position.top);
+    let cage_position = $("#cage").offset();            // Stores the top and left position of the cage.
+    //console.log("Cage left: " + cage_position.left + " top: " + cage_position.top);
 
     //position of the bird when stopped.
-    let bird_position = bird.offset();
-    console.log("Bird left: " + bird_position.left + " top: " + bird_position.top)
+    let bird_position = bird.offset();                  // Stores the top and left position of the bird where it is.
+    //console.log("Bird left: " + bird_position.left + " top: " + bird_position.top)
 
-    return bird_position.left > cage_position.left - 20 && bird_position.left < cage_position.left + 150;
+    return bird_position.left > cage_position.left - 20 && bird_position.left < cage_position.left + 150; //return true or false.
 }
 
 function run(id_value){
-    if (id_value ==="easy"){
-        console.log("started: All ready to go");
+    if (id_value ==="easy"){                            // User pressed easy.
         $(".canvas").css({
-            "animation": "bkg_move linear 4s infinite"
+            "animation": "bkg_move linear 4s infinite"  // Animate the background.
         });
-        $("#bird").css({
+        $("#bird").css({                                //Animate the bird.
             "animation": "bird_move linear 4s infinite"
         });
     }
