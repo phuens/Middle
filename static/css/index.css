@@ -61,11 +61,13 @@ html body{
 }
 /*This is for the play button*/
 .canvas .front-page .text-center .btn-primary{
-    font-size: 3rem;
+    font-size: 2rem;
     position: relative;
     top:100px;
-    padding:2px 40px;
-    color:orange;
+    padding:2px 10px;
+    color:white;
+    font-family: 'ZCOOL KuaiLe', sans-serif;
+    border: 1px solid white;
 }
 .start{
     display: block;
