@@ -1,7 +1,7 @@
 *{
     transition: all 300ms ease;
 }
-html, body{
+html body{
     background: antiquewhite;
     min-width: 900px;
 }
@@ -54,7 +54,7 @@ html, body{
 #in-game_title{
     font-family: 'Julius Sans One', sans-serif;
     font-size: 110px;
-    color:white;
+    color:#ff8302;
     text-align: center;
     position: relative;
     top:100px;
@@ -74,21 +74,27 @@ html, body{
 #cage{
     width:20%;
     height:15%;
-    display: block;
+    display: none;
     margin: 30px auto auto auto;
-    border: 1px solid black;
+    border: 0 solid black;
+    animation: show 500ms ease-in;
 }
+@keyframes show {
+    from{opacity: 0}
+    to{opacity:1}
+}
+
 #bird{
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
     position: relative;
     overflow: hidden;
     width:10%;
-    border: 1px solid black;
+    border: 0 solid black;
 }
 @keyframes bird_move {
     from {left: 0;}
-    to {left: 90%;}
+    to {left: 100%;}
 }
 
 

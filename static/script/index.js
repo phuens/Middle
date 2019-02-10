@@ -4,6 +4,7 @@ $(document).ready(function(){
         $(".start").hide("fast");
         start();
         console.log("button hidden");
+        $("#cage").css("display","block");
     })
 });
 function bleep(){
@@ -18,6 +19,7 @@ function start(){
     });
     $("#bird").css({
         "top": "200px",
+        "left": "-1000px",
         "animation": "bird_move ease-in 5s"
     });
     $(document).keydown(function(event) {
@@ -30,5 +32,8 @@ function start(){
 function check(){
     $("#bird").css("animation-play-state","paused");
     $(".canvas").css("animation-play-state","paused");
-
+    let position = $("#cage").offset();
+    console.log("left: " + position.left + " top: " + position.top);
+    let bird_position = $("#bird").offset();
+    console.log("left: " + bird_position.left + " top: " + bird_position.top)
 }
