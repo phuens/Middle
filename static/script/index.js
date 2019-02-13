@@ -142,8 +142,10 @@ function lose(){
     $(".banner").css("filter","saturate(0)");
     $(".canvas").css("filter","saturate(0)");
     $("body").css("background-color","#b1a9a9");
+
     let value = "<br><h1>You Lost! :(</h1><i class=\"far fa-frown\"></i><br>Please Try Agian.<br>";
     writeWinLose(value);
     let audioUrl = "<audio controls autoplay><source src='../static/images/lose.mp3' type='audio/mpeg'><source src='../static/images/lose.ogg' type='audio/ogg'></audio>";
-    $("audio").replaceWith(audioUrl)
+    $("audio").replaceWith(audioUrl);
+
 }

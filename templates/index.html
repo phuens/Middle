@@ -13,18 +13,20 @@
 
 </head>
 <body>
-
+    <div class="container-fluid">
+        <div class="banner">
+            <img class ="col-xl-1 col-lg-1" id="img-logo" src="../static/images/logo.png">
+            <span class ="col-xl-5 col-lg-5 col-md-11 col-sm-11" id="logo"><a href="#"> Birdie</a></span>
+            <span class ="col-xl-6 col-lg-6 col-md-12 col-sm-12" id="slogan">Only One Spot Matters!</span>
+            <hr>
+        </div>
+    </div>
     <div class="container">
         <audio controls autoplay>
             <source src="../static/images/bkg-sound.mp3" type="audio/mpeg">
             <source src="../static/images/bkg-sound.ogg" type="audio/ogg">
         </audio>
-        <div class="banner">
-            <img class ="col-xl-1 col-lg-1" id="img-logo" src="../static/images/logo.png">
-            <span class ="col-xl-5 col-lg-5 col-md-11 col-sm-11" id="logo"><a href="#"> Birdie</a></span>
-            <span class ="col-xl-6 col-lg-6 col-md-12 col-sm-12" id="slogan">&nbsp Only One Spot Matters!</span>
-            <hr>
-        </div>
+
         <div class="canvas">
             <div class="front-page">
                 <!--This is just for the backhround music when the page is first loaded. -->
@@ -40,17 +42,28 @@
                 <img class="center-block" id="cage" src="../static/images/cage2.png">
                 <!-The flying bird-->
                 <img id="bird" src="../static/images/bird.gif">
-
-                <div class="fireworks"></div>
+                <div class="fireworks"></div> <!--To hold the fireworks gif-->
             </div>
         </div>
         <div id="win">
             <div id="message"></div>
             <a href="index.html"><button class="btn btn-info done"><i class="fas fa-redo-alt"></i></button></a>
-            <a href="#"> <button class="btn btn-danger done"><i class="fas fa-times"></i></button></a>
+            <a href="http://cs.wheatoncollege.edu/~pnorbu/"> <button class="btn btn-danger done"><i class="fas fa-times"></i></button></a>
         </div>
+        <br>
+        <div class="footer">
+            <h3> How to Play <i class="fas fa-info-circle"></i></h3>
+            <hr>
+            <p> After selecting the level, press "ENTER" to stop the bird. </p>
+            <p> You win when you stop the bird inside the cage and <br>lose when you stop the bird outside the cage.</p>
+            <div id="modified" style="display:block; margin: 0 auto; width:180px; border:solid 1px gray;padding:10px;"></div>
+        </div>
+        <br>
     </div>
+
+
     <script>
+        $("#modified").html(document.lastModified);
     </script>
 </body>
 </html>

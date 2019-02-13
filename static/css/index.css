@@ -12,20 +12,23 @@ audio{
 /*|||||||||||||||||||||||||||||||||||||||||||||||||||
 ================ BANNER SECTION  ====================
 |||||||||||||||||||||||||||||||||||||||||||||||||||||*/
+.banner{
+    text-align: center;
 
+}
 /*Image of the bird in a cage*/
 #img-logo{
     width: 10%;
     position: relative;
-    top: -30px;
+    top: 0;
 }
 /*The name of the game: Birdie*/
 #logo{
     font-family: 'Monoton' , sans-serif;
     font-size:70px;
-    color: blue;
+    color: white;
     text-align: left;
-
+    top:30px;
 }
 /*Only one Spot matters!*/
 #slogan{
@@ -33,6 +36,7 @@ audio{
     font-family: 'Julius Sans One', sans-serif;
     color: grey;
     padding-top:70px;
+    top:30px;
 }
 
 /*|||||||||||||||||||||||||||||||||||||||||||||||||||
@@ -107,6 +111,11 @@ audio{
     from {left: 0;}
     to {left: 93%;}
 }
+@keyframes bird-dissappear {
+    from {opacity: 1;}
+    to{opacity:0}
+
+}
 .fireworks{
     animation: fire 3s ease-in;
     opacity:1;
@@ -128,6 +137,7 @@ audio{
     z-index:10;
     opacity:0.9;
     animation: show-msg 1500ms ease-in;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
 }
 @keyframes show-msg {
     from{opacity: 0;}
@@ -142,6 +152,14 @@ audio{
     font-size:30px;
 }
 
+.footer{
+    box-shadow: 0 0 8px rgba(0, 0, 0, .8);
+    background:#cfbbff;
+    width:100%;
+    text-align: center;
+    padding: 10px;
+    color:white;
+}
 /*|||||||||||||||||||||||||||||||||||||||||||||||||||
 ================ MEDIA QUERIES ======================
 |||||||||||||||||||||||||||||||||||||||||||||||||||||*/
