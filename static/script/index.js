@@ -1,6 +1,6 @@
 $(document).ready(function(){
-    $(".btn").click(function(){
-        $(".btn").hide("fast");                         // Hides all the buttons when it is clicked.
+    $(".btn-primary").click(function(){
+        $(".btn-primary").hide("fast");                         // Hides all the buttons when it is clicked.
         $("#bird").css("display", "block");
         $("#cage").css("display","block");              // Display the cage once the user is ready.
         $("#in-game_title").hide("fast");               // Hide the title "Birdie" when user is ready.
@@ -99,7 +99,6 @@ function celebrate(){
     let width = $( window ).width()-200;
     let height = $( window ).height()-300;
 
-
     for(let i=0; i < 19; i++){
         picts[i] = new Image();
         picts[i].src = "../static/images/firework"+i+".gif";
@@ -114,12 +113,24 @@ function celebrate(){
             "left": left_pos
         });
     }
-    $(".win-msg").css("display","block")
+    let value = "<br><h1> You Won!</h1><i class=\"far fa-smile\"></i><br>Congratulation<br>";
+    writeWinLose(value)
+}
+
+function writeWinLose(value){
+    $("#win").css({
+        "display" : "block",
+    });
+    $("#message").html(value);
 }
 
 /**
  * Displays a message saying you lost.
  */
 function lose(){
-    console.log("you lost!")
+    $(".banner").css("filter","saturate(0)");
+    $(".canvas").css("filter","saturate(0)");
+    $("body").css("background-color","#b1a9a9");
+    let value = "<br><h1>You Lost! :(</h1><i class=\"far fa-frown\"></i><br>Please Try Agian.<br>";
+    writeWinLose(value)
 }

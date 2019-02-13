@@ -103,6 +103,25 @@ html body{
     from {left: 0;}
     to {left: 93%;}
 }
+#win{
+    position:fixed;
+    display:none;
+    width:30%;
+    height:30%;
+    border:1px solid black;
+    top:30%;
+    left:35%;
+    text-align: center;
+    background-color:white;
+    z-index:10;
+}
+#message{
+    font-size: 30px;
+}
+.done i{
+    color:white;
+    font-size:30px;
+}
 
 /*|||||||||||||||||||||||||||||||||||||||||||||||||||
 ================ MEDIA QUERIES ======================
