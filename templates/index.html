@@ -15,6 +15,10 @@
 <body>
 
     <div class="container">
+        <audio controls autoplay>
+            <source src="../static/images/bkg-sound.mp3" type="audio/mpeg">
+            <source src="../static/images/bkg-sound.ogg" type="audio/ogg">
+        </audio>
         <div class="banner">
             <img class ="col-xl-1 col-lg-1" id="img-logo" src="../static/images/logo.png">
             <span class ="col-xl-5 col-lg-5 col-md-11 col-sm-11" id="logo"><a href="#"> Birdie</a></span>
@@ -22,10 +26,9 @@
             <hr>
         </div>
         <div class="canvas">
-
             <div class="front-page">
                 <!--This is just for the backhround music when the page is first loaded. -->
-                <iframe id="background-sound" width="0" height="0"  src="../static/images/bensound-littleidea.mp3" frameborder="0" allowfullscreen></iframe>
+                <audio id="background-sound"><source src="../static/images/bkg-sound.mp3" type="audio/mpeg"></audio>
                 <h1 id="in-game_title"><b>Birdie</b></h1>
                 <!--the start button on the front page-->
                 <div class="text-center">
@@ -44,9 +47,10 @@
         <div id="win">
             <div id="message"></div>
             <a href="index.html"><button class="btn btn-info done"><i class="fas fa-redo-alt"></i></button></a>
-            <a href="#"> <button class="btn btn-danger done">Quit</button></a>
+            <a href="#"> <button class="btn btn-danger done"><i class="fas fa-times"></i></button></a>
         </div>
     </div>
-    <script></script>
+    <script>
+    </script>
 </body>
 </html>

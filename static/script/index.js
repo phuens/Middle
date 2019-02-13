@@ -114,9 +114,15 @@ function celebrate(){
         });
     }
     let value = "<br><h1> You Won!</h1><i class=\"far fa-smile\"></i><br>Congratulation<br>";
-    writeWinLose(value)
+    writeWinLose(value);
+    let audioUrl = "<audio controls autoplay><source src='../static/images/firework.mp3' type='audio/mpeg'><source src='../static/images/firework.ogg' type='audio/ogg'></audio>";
+    $("audio").replaceWith(audioUrl)
 }
 
+/**
+ * This function prints the message of win or lose.
+ * @param value - message needed to be displayed ccording to win or lose.
+ */
 function writeWinLose(value){
     $("#win").css({
         "display" : "block",
@@ -132,5 +138,7 @@ function lose(){
     $(".canvas").css("filter","saturate(0)");
     $("body").css("background-color","#b1a9a9");
     let value = "<br><h1>You Lost! :(</h1><i class=\"far fa-frown\"></i><br>Please Try Agian.<br>";
-    writeWinLose(value)
+    writeWinLose(value);
+    let audioUrl = "<audio controls autoplay><source src='../static/images/lose.mp3' type='audio/mpeg'><source src='../static/images/lose.ogg' type='audio/ogg'></audio>";
+    $("audio").replaceWith(audioUrl)
 }
