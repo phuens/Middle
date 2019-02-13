@@ -5,6 +5,7 @@ html body{
     background: antiquewhite;
     min-width: 900px;
 }
+/*inorder to make the audio not show up.*/
 audio{
     width:0;
     height:0;

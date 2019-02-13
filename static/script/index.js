@@ -99,7 +99,7 @@ function celebrate(){
     let width = $( window ).width()-200;
     let height = $( window ).height()-300;
 
-    for(let i=0; i < 19; i++){
+    for(let i=0; i < 19; i++){                                  // display all the fireworks pictures.
         picts[i] = new Image();
         picts[i].src = "../static/images/firework"+i+".gif";
         console.log(picts[i].src);
@@ -107,7 +107,7 @@ function celebrate(){
         $(".fireworks" ).append(new_img);
         let left_pos = Math.floor((Math.random()*width)+1);
         let top_pos = Math.floor((Math.random()*height)+1);
-        $("#"+i).css({
+        $("#"+i).css({                                          // randomize the position of the fireworks;
             "position": "absolute",
             "top": top_pos,
             "left": left_pos
@@ -115,9 +115,12 @@ function celebrate(){
     }
     let value = "<br><h1> You Won!</h1><i class=\"far fa-smile\"></i><br>Congratulation<br>";
     writeWinLose(value);
+    //add the win audio.
     let audioUrl = "<audio controls autoplay><source src='../static/images/firework.mp3' type='audio/mpeg'><source src='../static/images/firework.ogg' type='audio/ogg'></audio>";
     $("audio").replaceWith(audioUrl)
 }
+
+//----------------------------------------------------------------------
 
 /**
  * This function prints the message of win or lose.
@@ -130,8 +133,10 @@ function writeWinLose(value){
     $("#message").html(value);
 }
 
+//----------------------------------------------------------------------
+
 /**
- * Displays a message saying you lost.
+ * Displays a message saying you lost and plays the lose audio.
  */
 function lose(){
     $(".banner").css("filter","saturate(0)");
